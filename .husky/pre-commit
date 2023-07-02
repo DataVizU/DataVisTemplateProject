@@ -1,0 +1,8 @@
+#!/bin/sh
+
+black . || echo 'Python format fail.'
+cd frontend || exit
+if [ -d 'node_modules' ]; then
+    npm run lint
+fi
+git add .

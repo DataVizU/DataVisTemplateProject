@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+python .husky/check_commit.py "$1" || echo 'Python check commit fail.'
+cd frontend || exit
+if [ -d 'node_modules' ]; then
+  npm run check-commit
+fi
